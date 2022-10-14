@@ -4,10 +4,14 @@ defmodule ExTime.MixProject do
   def project do
     [
       app: :ex_time,
-      version: "0.1.0",
+      version: "0.0.0",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      description: description(),
+      package: package(),
+      deps: deps(),
+      name: "ExTime",
+      source_url: "https://github.com/yuriploc/ex_time"
     ]
   end
 
@@ -18,11 +22,21 @@ defmodule ExTime.MixProject do
     ]
   end
 
+  defp description do
+    "A light Time and DateTime library with functions that are currently not supported by Elixir native DateTime module."
+  end
+
+  defp package do
+    [
+      files: ~w(lib priv .formatter.exs mix.exs README* readme* LICENSE*
+        license* CHANGELOG* changelog* src),
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/yuriploc/ex_time"}
+    ]
+  end
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
-    [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
-    ]
+    []
   end
 end
